@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Francois+One&display=swap");
+
+//////////////////////
+$principal: #d00000;
+/////////////////////
+
+/////////////////////
+$primary: $principal;
+////////////////////
+
+
+$font-family-sans-serif: 'Roboto', sans-serif;
+
+img {
+    width: auto;
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.sub-titulo{
+    span{
+        font-family: 'Francois One', sans-serif;
+        font-size: 1.8rem;
+        border-bottom: 5px solid #d00000
+    }
+}
+
+.contenedor-titulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 5px solid #d00000;
+    border-bottom: 5px solid #d00000;
+    span{
+        font-family: 'Francois One', sans-serif;
+        font-size: 3.125rem;
+    }
+}
+
+.card-body{
+    .name{
+        font-family: 'Oswald', sans-serif;
+        font-size: 1.1rem;
+    }
+    .precio-tachado {
+        display: inline-block;
+        text-decoration: line-through;
+        color: #474750;
+    }
+    .precio-más-bajo {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10px;
+    }
+    .precio-final {
+        font-family: 'Fjalla One', sans-serif;
+        font-size: 1.6rem;
+        color: #c50707f3;
+    }
+    .precio-original{
+        margin-top: 4.188rem;
+        font-family: 'Fjalla One', sans-serif;
+        font-size: 1.563rem;
+        color: #0057b4;
+    }
+    .hidden{
+        visibility: hidden;
+    }
+}
+
+textarea{
+    height: 120px;
+}
+@import "../node_modules/bootstrap/scss/bootstrap";
