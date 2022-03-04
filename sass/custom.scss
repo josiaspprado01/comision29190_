@@ -4,17 +4,53 @@
 
 //////////////////////
 $principal: #d00000;
+$secundario: #0057b4;
 /////////////////////
+
+$font-family-sans-serif: 'Roboto', sans-serif;
 
 /////////////////////
 $primary: $principal;
+$secondary: $secundario;
 ////////////////////
 
+/////////////////////
+$colors: (
+    color1: $principal,
+    color2: $secundario,
+    color3: #474750
+);
+/////////////////////
+@mixin contenedores ($ancho, $alto){
+    width: $ancho;
+    height: $alto;
+ }
+///////////////////////
+%boton {
+    @include contenedores (133.91px, 38px);
+    border: 1px solid transparent;
+    padding: .375rem .75rem; 
+    font-size: 1rem;
+    border-radius: .25rem;
+    cursor: pointer;
+}
+/////////////////////////
+
+.boton_1{
+   @extend %boton;
+   background-color: #ff8516;
+}
+
+.boton_2{
+    @extend %boton;
+    background-color: $principal;
+    color: white;
+}
 
 $font-family-sans-serif: 'Roboto', sans-serif;
 
 img {
-    width: auto;
+    @include contenedores (auto, auto);
     max-width: 100%;
     border-radius: 8px;
 }
@@ -23,7 +59,7 @@ img {
     span{
         font-family: 'Francois One', sans-serif;
         font-size: 1.8rem;
-        border-bottom: 5px solid #d00000
+        border-bottom: 5px solid map-get($colors, color1);
     }
 }
 
@@ -31,8 +67,8 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-top: 5px solid #d00000;
-    border-bottom: 5px solid #d00000;
+    border-top: 5px solid map-get($colors, color1);
+    border-bottom: 5px solid map-get($colors, color1);
     span{
         font-family: 'Francois One', sans-serif;
         font-size: 3.125rem;
@@ -47,7 +83,7 @@ img {
     .precio-tachado {
         display: inline-block;
         text-decoration: line-through;
-        color: #474750;
+        color: map-get($colors, color3);
     }
     .precio-más-bajo {
         display: block;
@@ -58,13 +94,13 @@ img {
     .precio-final {
         font-family: 'Fjalla One', sans-serif;
         font-size: 1.6rem;
-        color: #c50707f3;
+        color: map-get($colors, color1)
     }
     .precio-original{
         margin-top: 4.188rem;
         font-family: 'Fjalla One', sans-serif;
         font-size: 1.563rem;
-        color: #0057b4;
+        color: map-get($colors, color2);
     }
     .hidden{
         visibility: hidden;
@@ -72,6 +108,11 @@ img {
 }
 
 textarea{
-    height: 120px;
+    @include contenedores (auto, 120px)
 }
+
+iframe{
+    @include contenedores (100%, 720px)
+}
+
 @import "../node_modules/bootstrap/scss/bootstrap";
