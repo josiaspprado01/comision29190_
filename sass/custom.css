@@ -53,6 +53,10 @@ img {
   font-size: 3.125rem;
 }
 
+h1, .h1 {
+  font-family: 'Francois One', sans-serif;
+}
+
 .card-body .name {
   font-family: 'Oswald', sans-serif;
   font-size: 1.1rem;
