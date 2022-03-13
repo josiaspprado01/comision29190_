@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Francois+One&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400&display=swap');
 
 //////////////////////
 $principal: #d00000;
@@ -18,7 +19,8 @@ $secondary: $secundario;
 $colors: (
     color1: $principal,
     color2: $secundario,
-    color3: #474750
+    color3: #474750,
+    color4: #ff8516
 );
 /////////////////////
 @mixin contenedores ($ancho, $alto){
@@ -27,24 +29,43 @@ $colors: (
  }
 ///////////////////////
 %boton {
-    @include contenedores (133.91px, 38px);
-    border: 1px solid transparent;
+    @include contenedores (140px, 40px);
     padding: .375rem .75rem; 
     font-size: 1rem;
     border-radius: .25rem;
     cursor: pointer;
+    font-family: 'Fredoka', sans-serif;
 }
 /////////////////////////
 
 .boton_1{
    @extend %boton;
-   background-color: #ff8516;
+   background-color: transparent;
+   border: 2px solid map-get($colors, color4);
+   color: map-get($colors, color4);
+   transition: all .25s ease;
+   &:hover{
+       background-color: map-get($colors, color4);
+       color: #fff;
+       transition: all .50s ease;
+       &:active{
+           transform: translate(0, 5px);
+       }
+   }
 }
 
 .boton_2{
     @extend %boton;
-    background-color: $principal;
-    color: white;
+    background-color: transparent;
+    color: $principal;
+    border: 2px solid $principal;
+    transition: all .25s ease;
+    &:hover{
+        background-color: $principal;
+        color: #fff;
+        transition: all .50s ease;
+        transform: translate(0, 5px);
+     }
 }
 
 $font-family-sans-serif: 'Roboto', sans-serif;
@@ -110,13 +131,22 @@ h1 {
         visibility: hidden;
     }
 }
+.card{
+    transition: all .25s ease;
+    &:hover{
+        transform: translateY(-20px);
+        transition: all .40s ease;
+        box-shadow: 0 0 1.5em #0002;
+    }
+}
 
 textarea{
-    @include contenedores (auto, 120px)
+    @include contenedores (auto, 120px);
 }
 
 iframe{
-    @include contenedores (100%, 720px)
+    @include contenedores (100%, 720px);
+    border-radius: 15px;
 }
 
 @import "../node_modules/bootstrap/scss/bootstrap";
