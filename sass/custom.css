@@ -8,7 +8,7 @@
   height: 40px;
   padding: .375rem .75rem;
   font-size: 1rem;
-  border-radius: .25rem;
+  border-radius: .35rem;
   cursor: pointer;
   font-family: 'Fredoka', sans-serif;
 }
@@ -39,6 +39,7 @@
   border: 2px solid #d00000;
   -webkit-transition: all .25s ease;
   transition: all .25s ease;
+  margin-bottom: 8px;
 }
 
 .boton_2:hover {
